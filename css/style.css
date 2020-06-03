@@ -1,0 +1,264 @@
+@font-face {
+    font-family: Dosis;
+    src: url(/Projet/font/Dosis-VariableFont_wght.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Dosis', sans-serif;
+}
+.page{
+    width: 80%;
+    margin: auto;
+}
+#log{
+    width: 300px;
+}
+.navbar{
+    margin: 18px auto;
+    padding-left: 10px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    background-color: #fffffd;
+    border-radius: 0.5em;
+    transition: all 0.2s ease-in-out;
+    animation: raise-container 0.4s forwards 0.2s;
+}
+@keyframes raise-container {
+    from {
+      box-shadow: none;
+      transform: scale(1);
+    } to {
+      box-shadow: -12px -12px 12px 0 rgba(255, 255, 255, 0.6), 2.8px 2.8px 2.8px rgba(0, 0, 0, 0.2);
+      transform: scale(1.02);
+    }
+  }
+  
+ul{
+    flex: 1;
+    text-align: right;
+}
+ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 25px;
+}
+ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 0 10px;
+    position: relative;
+}
+ul li a::after{
+    content: '';
+    width: 0;
+    height: 10px;
+    background-color: #F14a60;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -55px;
+    transition: 0.5s;
+}
+ul li a:hover::after{
+    width: 100%;
+}
+.uca img{
+    height: 120px;
+    margin-left: 100px;
+}
+.contenu{
+    display: flex;
+    margin-top: 50px;
+}
+.gauche,.droite{
+    flex-basis: 50%;
+} 
+.droite img{
+    width: 450px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.about span{
+    color: #F14a60;
+}
+.card{
+    position: relative;
+    top: 8px;
+    width: 80%;
+    margin: 0 auto;
+}
+.card .nom{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+.card .nom h3{
+    color: #fff;
+    font-size: 3em;
+}
+.card .details{
+    padding-top: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0;
+
+}
+.card .qrcode {
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+.card .qrcode .qrimg img{
+    width: 230px;
+    height: 230px;
+    padding: 0;
+    margin: 0;
+}
+.card .qrcode button {
+    font-size: large;
+    margin-bottom: 10px;
+    display: inline-block;
+    padding: 5px 5px;
+    text-decoration: none;
+    border: 2px solid #262626;
+    color: #262626;
+}
+.swiper-container {
+    position: relative;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+.swiper-slider{
+    overflow: scroll;
+    position: relative;
+    top: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.2em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+} 
+.content-table thead tr {
+    background-color: #F14a60;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+} 
+.content-table th, .content-table td {
+    padding: 12px 15px;
+} 
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}  
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}  
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #F14a60;
+}
+#mainbody {
+    margin: 2% 10%;  
+    width: 80%;  
+    background: whitesmoke;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #262626;
+}
+.select{
+    margin: 0;
+    position: relative;
+    top: 10px;
+}
+.select .selector {
+    margin: 0px 120px;
+}
+
+#qr-canvas {
+    display: none;
+}
+#out-canvas {
+    width: 400px;
+}
+#mp1 {
+    text-align: center;
+    font-size: 35px;
+}
+#imghelp {
+    position: relative;
+    left: 0px;
+    top: 25%;
+    z-index: 100;
+    background: #f0f0f0;
+    margin-left: -1px;
+    border: .9px solid #262626;
+    border-radius: 20px;
+    width: 400px;
+    padding: 2%;
+    display: flex;
+    align-items: center;
+}
+.selector {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+#v {
+    width: 416px;
+    height: 312px;
+}
+#outdiv {
+    width: 416px;
+    height: 312px;
+    border: solid;
+    border-width: 3px 3px 3px 3px;
+    margin: 20px;
+}
+.resultat {
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	margin: 20px;
+    width: 700px;
+    height: 80px;
+    background: whitesmoke;
+    text-align: center;
+    border: 0.8px solid black;
+    font-size: larger;
+    justify-content: center;
+}
+
+.resultat #present span {
+    color: darkgreen;
+}
+
+.footer {
+    width: 80%;
+    position: relative;
+    left: 10%;
+    height: auto;
+    margin-top: 50px;
+    background: #272727;
+    padding: 20px 0px;    
+}
+
+.footer-head , .footer-foot , .footer-body {
+    text-align: center;
+    color: whitesmoke;
+}
