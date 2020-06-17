@@ -1,5 +1,3 @@
-// QRCODE reader Copyright 2011
-
 var gCtx = null;
 var gCanvas = null;
 var c = 0;
@@ -107,7 +105,7 @@ function read(a) {
     document.getElementById("pre").innerHTML = "Présent";
 
     if (htmlEntities(a) === 'error decoding QR Code') {
-        document.getElementById("pre").innerHTML = "Erreur";
+        document.getElementById("pre").innerHTML = "Erreur de décodage du code QR";
     }
 
     if (document.getElementById("pre").textContent == "Présent") {
@@ -144,9 +142,9 @@ function load() {
         setwebcam();
     } else {
         document.getElementById("mainbody").style.display = "inline";
-        document.getElementById("mainbody").innerHTML = '<p id="mp1">QR code scanner for HTML5 capable browsers</p><br>' +
-            '<br><p id="mp2">sorry your browser is not supported</p><br><br>' +
-            '<p id="mp1">try <a href="http://www.mozilla.com/firefox"><img src="firefox.png"/></a> or <a href="http://chrome.google.com"><img src="chrome_logo.gif"/></a> or <a href="http://www.opera.com"><img src="Opera-logo.png"/></a></p>';
+        document.getElementById("mainbody").innerHTML = '<p id="mp1">Les navigateur capable de scanner for le Qr Code avec HTML5</p><br>' +
+            '<br><p id="mp2">désolé votre navigateur n`est pas supporté</p><br><br>' +
+            '<p id="mp1">Essayer <a href="http://www.mozilla.com/firefox"><img src="firefox.png"/></a> ou <a href="http://chrome.google.com"><img src="chrome_logo.gif"/></a> ou <a href="http://www.opera.com"><img src="Opera-logo.png"/></a></p>';
     }
 }
 

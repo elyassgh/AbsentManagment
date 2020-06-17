@@ -2,6 +2,16 @@
 define('TITRE', "P.V.");
 include_once('includes/header.php');
 ?>
+<!-- Script pour imprimer le PV -->
+<script>
+  function imprimer() {
+        var divToPrint=document.getElementById("pv");
+        newWin= window.open("");
+        newWin.document.write(divToPrint.outerHTML);
+        newWin.print();
+        newWin.close();
+    }
+</script>
 
 <h1>P.V. d'absence :</h1>
 
@@ -41,7 +51,7 @@ include('code.php');
   <input type="submit" name="sub" value="chercher">
 </form>
 
-<table class="content-table">
+<table id="pv" class="content-table">
   <thead>
     <tr>
       <th>Code Apogée</th>
@@ -75,7 +85,7 @@ include('code.php');
   </tbody>
 </table>
 
-
+<button style="font-size: large;" onclick="imprimer()">Imprimer</button>
 
 </div>
 

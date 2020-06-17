@@ -31,6 +31,7 @@ include_once('includes/header.php');
                         examens des étudiants, et juste un simple <b>scan</b> (via une caméra ou un scanner) de ce code
                         on
                         notera son présence.
+                        <b>Une connexion <span>Internet</span> est requise !</b>
                     </p>
                     <br>
                     <hr>

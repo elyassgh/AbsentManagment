@@ -153,7 +153,7 @@
 <div class="footer">
 
     <div class="footer-head">
-        <h1> Elghazi Ilyass 2020<sup>&copy;</sup> </h1>
+        <h1> Elghazi Ilyass <?php echo date("Y");?> Copyright<sup>&copy;</sup> </h1>
     </div>
 
     <div class="footer-body">
