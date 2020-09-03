@@ -6,7 +6,6 @@ include_once('includes/header.php');
 <?php
 include('code.php');
 ?>
-</div>
 
 
 <div id="mainbody">
@@ -31,8 +30,12 @@ include('code.php');
                 }
                 ?>
             </select>
+            <label>Semestre :</label>
+            <select name="semestre">
+                <option selected> </option>
+            </select>
             <label>Module :</label>
-            <select name="module">
+            <select required name="module">
                 <option selected> </option>
             </select>
             <input required hidden id="apo" type="text" name="apogee">

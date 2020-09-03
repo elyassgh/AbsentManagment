@@ -2,6 +2,7 @@
 define('TITRE', "P.V.");
 include_once('includes/header.php');
 ?>
+
 <!-- Script pour imprimer le PV -->
 <script>
   function imprimer() {
@@ -9,7 +10,6 @@ include_once('includes/header.php');
         newWin= window.open("");
         newWin.document.write(divToPrint.outerHTML);
         newWin.print();
-        newWin.close();
     }
 </script>
 
@@ -37,6 +37,10 @@ include('code.php');
       echo '<option value="' . $Session->Session . '">' . $Session->Session . '</option>';
     }
     ?>
+  </select>
+  <label>Semestre :</label>
+  <select required name="semestre">
+    <option selected value="tous">Tous</option>
   </select>
   <label>Module :</label>
   <select name="module">

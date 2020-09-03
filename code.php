@@ -16,6 +16,7 @@ try {
 
     $Sessions = $pdo->query("Select Distinct Session from Examen");
     $Sessions->setFetchMode(PDO::FETCH_OBJ);
+    
 } catch (Exception $e) {
     echo "Erreur lors de la connexion à la base de données ! " . $e->getMessage();
 }
@@ -228,6 +229,17 @@ if (isset($_POST['sub'])) {
                     break;
             }
             break;
+    }
+
+    if ($_POST['semestre']) {
+        foreach ($filtred as $elem) {
+            if ($_POST['semestre'] == 'tous') break;
+            if ($elem->Semestre != $_POST['semestre']) {
+                //Cherche dynamique du key (le dimension de l'array peut changer a l'intérieure de la boucle)
+                $key = array_search($elem , $filtred);
+                unset($filtred[$key]);
+            }
+        }
     }
 }
 

@@ -1,9 +1,9 @@
 <?php
-define('TITRE',"Acceuil");
+define('TITRE',"Accueil");
 include_once('includes/header.php');
 ?>
 
-<div class="contenu">
+    <div class="contenu">
             <div class="gauche">
                 <div class="about">
                     <h1><span>Projet</span> : Gestion d'absence aux examens</h1>
@@ -41,10 +41,8 @@ include_once('includes/header.php');
             <div class="droite">
                 <img src="img/logo2.png" alt="Gestion d'Absence des étudiants en examen">
             </div>
-        </div>
 
     </div>
-
 
 <?php
 include_once('includes/footer.php');
