@@ -34,6 +34,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+//------------------- Event listeners callbacks
 function dragenter(e) {
     e.stopPropagation();
     e.preventDefault();
@@ -57,6 +58,7 @@ function drop(e) {
             qrcode.decode(dt.getData('URL'));
         }
 }
+//------------------- 
 
 function success(stream) {
 
@@ -79,8 +81,8 @@ function create(data) {
 }
 
 // Tester si le navigateur est pris en charge
-// et charger la page avec la demande d'accées a la webcam
 // et définie le callback du plugin llqrcode.js
+// et charger la page avec la demande d'accées a la webcam
 function load() {
     if (isCanvasSupported() && window.File && window.FileReader) {
         initCanvas(800, 600);
@@ -93,7 +95,7 @@ function load() {
     }
 }
 
-//Méthode qui lit ce qui est décode dans le QR code
+//Méthode qui interpréte le résultat decodé dans le QR code
 function read(a) {
     var html = "";
     if (a.indexOf("http://") === 0 || a.indexOf("https://") === 0)
@@ -109,7 +111,8 @@ function read(a) {
     }
 
     if (document.getElementById("pre").textContent == "Présent") {
-        sleep(600).then(() => {
+        sleep(750).then(() => {
+            // Le button up (submit) --> communication avec la bd pour noter la présence
             document.getElementById("up").click();
             document.getElementById("webcamimg").click();
         });
@@ -121,6 +124,7 @@ function read(a) {
     // ------------  Méthodes qui permet de choisir le type de l'input
             // ----  Soit la webcam ou bien uploader le fichier depuis le stockage
 
+// Html variables
 var imghtml =
     '<div id="imghelp">Si la cam ou le scanner ne fonctionne pas glisser ici le QRCode' +
     '<br>Ou selectionner le depuis le stockage' +
@@ -129,6 +133,7 @@ var imghtml =
     '</div>';
 
 var vidhtml = '<video id="v" autoplay></video>';
+// --------------
 
 //Méthode qui choisi l'input de QR code comme une image
 function setimg() {
@@ -176,7 +181,6 @@ function setwebcam() {
         console.log("no navigator.mediaDevices.enumerateDevices");
         setwebcam2(options);
     }
-
 }
 
 // Méthode qui décode le QR Code depuis la webcam (Scanner)
@@ -228,7 +232,6 @@ function setwebcam2(options) {
 
 //Méthode qui lit l'image uploadé (fichier) comme une matrice et le décodé à l'aide du plugin llqrcode.js
 function handleFiles(f) {
-    var o = [];
 
     for (var i = 0; i < f.length; i++) {
         var reader = new FileReader();

@@ -231,16 +231,15 @@ if (isset($_POST['sub'])) {
             break;
     }
 
-    if ($_POST['semestre']) {
-        foreach ($filtred as $elem) {
+
+    foreach ($filtred as $elem) {
             if ($_POST['semestre'] == 'tous') break;
-            if ($elem->Semestre != $_POST['semestre']) {
-                //Cherche dynamique du key (le dimension de l'array peut changer a l'intérieure de la boucle)
-                $key = array_search($elem , $filtred);
-                unset($filtred[$key]);
-            }
+
+                if ($elem->Semestre != $_POST['semestre']) {
+                    unset($filtred[array_search($elem , $filtred)]);
+                }
+            
         }
-    }
 }
 
 
@@ -248,9 +247,11 @@ if (isset($_POST['update'])) {
 
     try {
 
+        //Résultat array !!
         $id = $pdo->query("Select Id from module where libelle like '" . $_POST['module'] . "';");
         $id->setFetchMode(PDO::FETCH_OBJ);
 
+        //Résultat array !!
         $num = $pdo->query("Select num from examen where Apogee like " . $_POST['apogee'] . " and Session like '" . $_POST['session'] . "';");
         $num->setFetchMode(PDO::FETCH_OBJ);
 

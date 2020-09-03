@@ -3,7 +3,7 @@ const modules = {
         value: "tous",
         desc: "Tous"
     }],
-    "IRISI S1": [{
+    "S1": [{
         value: "tous",
         desc: "Tous"
     }, {
@@ -31,7 +31,7 @@ const modules = {
         value: "Langues et communication 1",
         desc: "Langues et communication 1"
     }],
-    "IRISI S2": [{
+    "S2": [{
         value: "tous",
         desc: "Tous"
     }, {
@@ -59,7 +59,7 @@ const modules = {
         value: "LANGUES ET COMMUNICATION 2",
         desc: "LANGUES ET COMMUNICATION 2"
     }],
-    "IRISI S3": [{
+    "S3": [{
         value: "tous",
         desc: "Tous"
     }, {
@@ -87,7 +87,7 @@ const modules = {
         value: "LANGUES ET COMMUNICATION 3",
         desc: "LANGUES ET COMMUNICATION 3"
     }],
-    "IRISI S4": [{
+    "S4": [{
         value: "tous",
         desc: "Tous"
     }, {
@@ -115,7 +115,7 @@ const modules = {
         value: "LANGUES ET COMMUNICATION 4",
         desc: "LANGUES ET COMMUNICATION 4"
     }],
-    "IRISI S5": [{
+    "S5": [{
         value: "tous",
         desc: "Tous"
     }, {
@@ -159,27 +159,27 @@ desc: "Tous"
     value: "",
     desc: ""
 },{
-value: "IRISI S1",
+value: "S1",
 desc: "S1"
 },{
-value: "IRISI S2",
+value: "S2",
 desc: "S2"
 }],
 "IRISI 2": [{
     value: "",
     desc: ""
 },{
-value: "IRISI S3",
+value: "S3",
 desc: "S3"
 },{
-value: "IRISI S4",
+value: "S4",
 desc: "S4"
 }],
 "IRISI 3": [{
     value: "",
     desc: ""
 },{
-value: "IRISI S5",
+value: "S5",
 desc: "S5"
 }],
 };
