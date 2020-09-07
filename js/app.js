@@ -34,7 +34,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-//------------------- Event listeners callbacks
+//------------------- Event listeners et callbacks
 function dragenter(e) {
     e.stopPropagation();
     e.preventDefault();
@@ -147,10 +147,6 @@ function setimg() {
     document.getElementById("outdiv").innerHTML = imghtml;
     document.getElementById("qrimg").style.opacity = 1.0;
     document.getElementById("webcamimg").style.opacity = 0.2;
-    var qrfile = document.getElementById("qrfile");
-    qrfile.addEventListener("dragenter", dragenter, false);
-    qrfile.addEventListener("dragover", dragover, false);
-    qrfile.addEventListener("drop", drop, false);
 }
 
 //Méthode qui demande l'accès à la webcam si il y une
@@ -178,6 +174,7 @@ function setwebcam() {
             console.log(e);
         }
     } else {
+        options = flase;
         console.log("no navigator.mediaDevices.enumerateDevices");
         setwebcam2(options);
     }
@@ -246,7 +243,7 @@ function handleFiles(f) {
     }
 }
 
-//Méthode qui décode l'image si elle à la forme d'une matrice à l'aide du plugin llqrcode.js
+//Méthode qui décode l'image si elle à la forme d'une matrice (canvas) à l'aide du plugin llqrcode.js
 function captureToCanvas() {
     if (stype != 1)
         return;
