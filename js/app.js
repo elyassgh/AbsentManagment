@@ -1,10 +1,8 @@
 var gCtx = null;
 var gCanvas = null;
-var c = 0;
 var stype = 0;
 var gUM = false;
 var webkit = false;
-var moz = false;
 var v = null;
 
 
